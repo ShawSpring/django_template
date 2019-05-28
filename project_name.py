@@ -39,6 +39,19 @@ settings.configure(
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ],
+     INSTALLED_APPS=[
+        "django.contrib.staticfiles",
+    ],
+    TEMPLATES = [
+        {
+            "BACKEND":"django.template.backends.django.DjangoTemplates",
+            "DIRS": [],
+        }
+    ],
+    STATICFILES_DIRS=[
+      
+    ],
+    STATIC_URL = '/static/',
 )
 
 
@@ -49,7 +62,7 @@ views
 '''
 from django.conf.urls import url
 from django.http import HttpResponse
-
+from django.shortcuts import render,reverse
 
 def index(request):
     return HttpResponse('Hello World')
